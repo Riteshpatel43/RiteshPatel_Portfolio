@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ritesh Patel - Portfolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #ffe5b4, #fff3e0);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        .card {
+            background: #fffaf0;
+            border-radius: 20px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            padding: 30px 25px;
+            max-width: 400px;
+            width: 100%;
+            position: relative;
+            border: 2px dashed #ffb74d;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+
+        .card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .label {
+            position: absolute;
+            top: -18px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #ff9800;
+            color: #fff;
+            padding: 6px 18px;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #bf5f00;
+            margin: 20px 0 10px;
+            font-weight: 800;
+        }
+
+        p {
+            font-size: 16px;
+            color: #5d4037;
+            margin: 10px 0;
+            word-wrap: break-word;
+        }
+
+        .btn {
+            margin-top: 25px;
+            display: inline-block;
+            padding: 14px 30px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #fff;
+            background: #ff9800;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            width: auto;
+        }
+
+        .btn:hover {
+            background: #e65100;
+            box-shadow: 0 0 12px rgba(230, 81, 0, 0.5);
+        }
+
+        .linkedin-btn {
+            background: #0077b5;
+            padding: 12px 30px;
+            border-radius: 30px;
+            color: white;
+            font-weight: 600;
+            font-size: 16px;
+            margin-top: 15px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.3s ease;
+        }
+
+        .linkedin-btn:hover {
+            background: #005e8a;
+            box-shadow: 0 0 12px rgba(0, 77, 121, 0.5);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                gap: 20px;
+            }
+
+            .card {
+                max-width: 70%;
+                transition: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 20px;
+            }
+
+            .btn {
+                width: 100%;
+                padding: 14px 0;
+                font-size: 15px;
+            }
+
+            .linkedin-btn {
+                width: 100%;
+                padding: 14px 0;
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="card">
+            <div class="label">About Me</div>
+            <p>Hello, I'm</p>
+            <h1>Ritesh Patel</h1>
+            <p>Azure Data Engineer</p>
+            <a href="Ritesh_Patel_Resume.pdf" class="btn" onclick="downloadCV()">Download CV</a>
+        </div>
+        <div class="card">
+            <div class="label">Contact</div>
+            <p>Email: riteshpatel43@outlook.com</p>
+            <p>Phone: +91 74878 29644</p>
+            <!-- <p>Website: riteshportfolio.com</p> -->
+            <a href="https://www.linkedin.com/in/ritesh-patel-a086ab238/" target="_blank"
+                class="linkedin-btn">LinkedIn</a>
+        </div>
+    </div>
+
+    <script>
+        function downloadCV() {
+            const link = document.createElement('a');
+            link.href = 'your-cv-link.pdf'; // Replace with actual link to your CV
+            link.download = 'Ritesh-Patel-CV.pdf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
+
+</body>
+
+</html>
